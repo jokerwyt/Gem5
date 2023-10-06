@@ -1,0 +1,272 @@
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd070]
+[    0.000000] Linux version 4.18.0+ (arm-employee@arm-computer) (gcc version 7.4.0 (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1)) #1 SMP PREEMPT Wed Nov 6 14:10:00 GMT 2019
+[    0.000000] Machine model: V2P-CA15
+[    0.000000] Memory limited to 512MB
+[    0.000000] cma: Reserved 16 MiB at 0x000000009f000000
+[    0.000000] On node 0 totalpages: 131072
+[    0.000000]   DMA32 zone: 2048 pages used for memmap
+[    0.000000]   DMA32 zone: 0 pages reserved
+[    0.000000]   DMA32 zone: 131072 pages, LIFO batch:31
+[    0.000000] random: get_random_bytes called from start_kernel+0xa8/0x3e8 with crng_init=0
+[    0.000000] percpu: Embedded 23 pages/cpu @(____ptrval____) s53976 r8192 d32040 u94208
+[    0.000000] pcpu-alloc: s53976 r8192 d32040 u94208 alloc=23*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 [0] 6 [0] 7 
+[    0.000000] Detected PIPT I-cache on CPU0
+[    0.000000] CPU features: enabling workaround for ARM erratum 832075
+[    0.000000] CPU features: enabling workaround for ARM erratum 834220
+[    0.000000] CPU features: enabling workaround for EL2 vector hardening
+[    0.000000] CPU features: detected: Kernel page table isolation (KPTI)
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 129024
+[    0.000000] Kernel command line: earlyprintk=pl011,0x1c090000 console=ttyAMA0 lpj=19988480 norandmaps rw loglevel=8 mem=512MB root=/dev/sda1
+[    0.000000] log_buf_len individual max cpu contribution: 4096 bytes
+[    0.000000] log_buf_len total cpu_extra contributions: 28672 bytes
+[    0.000000] log_buf_len min size: 16384 bytes
+[    0.000000] log_buf_len: 65536 bytes
+[    0.000000] early log buf free: 14700(89%)
+[    0.000000] Dentry cache hash table entries: 65536 (order: 7, 524288 bytes)
+[    0.000000] Inode-cache hash table entries: 32768 (order: 6, 262144 bytes)
+[    0.000000] Memory: 479428K/524288K available (6910K kernel code, 452K rwdata, 2312K rodata, 448K init, 217K bss, 28476K reserved, 16384K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] 	RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=8.
+[    0.000000] 	Tasks RCU enabled.
+[    0.000000] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=8
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GIC: GICv2 detected, but range too small and irqchip.gicv2_force_probe not set
+[    0.000000] clk_gem5_energy_ctrl: No cpu-map in DT! Falling back to old detection method!
+[    0.000000] clk_gem5_energy_ctrl: No clusters in DT! Falling back to using CPU topology!
+[    0.000001] sched_clock: 32 bits at 24MHz, resolution 41ns, wraps every 89478484971ns
+[    0.000083] arch_timer: Unable to find a suitable frame in timer @ 0x000000002a810000
+[    0.000087] Failed to initialize '/timer@2a810000': -22
+[    0.000149] Console: colour dummy device 80x25
+[    0.000155] Calibrating delay loop (skipped) preset value.. 9994.24 BogoMIPS (lpj=19988480)
+[    0.000160] pid_max: default: 32768 minimum: 301
+[    0.000200] Mount-cache hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.000204] Mountpoint-cache hash table entries: 1024 (order: 1, 8192 bytes)
+[    0.024070] ASID allocator initialised with 128 entries
+[    0.032070] Hierarchical SRCU implementation.
+[    0.048081] smp: Bringing up secondary CPUs ...
+[    0.080109] Detected PIPT I-cache on CPU1
+[    0.080119] CPU1: Booted secondary processor 0x0000000001 [0x410fd070]
+[    0.112131] Detected PIPT I-cache on CPU2
+[    0.112141] CPU2: Booted secondary processor 0x0000000002 [0x410fd070]
+[    0.144153] Detected PIPT I-cache on CPU3
+[    0.144164] CPU3: Booted secondary processor 0x0000000003 [0x410fd070]
+[    0.176176] Detected PIPT I-cache on CPU4
+[    0.176186] CPU4: Booted secondary processor 0x0000000004 [0x410fd070]
+[    0.208198] Detected PIPT I-cache on CPU5
+[    0.208208] CPU5: Booted secondary processor 0x0000000005 [0x410fd070]
+[    0.240220] Detected PIPT I-cache on CPU6
+[    0.240230] CPU6: Booted secondary processor 0x0000000006 [0x410fd070]
+[    0.272242] Detected PIPT I-cache on CPU7
+[    0.272252] CPU7: Booted secondary processor 0x0000000007 [0x410fd070]
+[    0.272283] smp: Brought up 1 node, 8 CPUs
+[    0.272304] SMP: Total of 8 processors activated.
+[    0.272307] CPU features: detected: Privileged Access Never
+[    0.272310] CPU features: detected: User Access Override
+[    0.272313] CPU features: detected: 32-bit EL0 Support
+[    0.272316] CPU features: detected: Scalable Vector Extension
+[    0.273232] SVE: maximum available vector length 16 bytes per vector
+[    0.273235] SVE: default vector length 16 bytes per vector
+[    0.273238] CPU: All CPU(s) started at EL2
+[    0.273246] alternatives: patching kernel code
+[    0.273904] devtmpfs: initialized
+[    0.274747] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.274752] futex hash table entries: 2048 (order: 5, 131072 bytes)
+[    0.275465] NET: Registered protocol family 16
+[    0.352619] cpuidle: using governor menu
+[    0.352704] vdso: 2 pages (1 code @ (____ptrval____), 1 data @ (____ptrval____))
+[    0.352708] hw-breakpoint: found 16 breakpoint and 16 watchpoint registers.
+[    0.353162] DMA: preallocated 256 KiB pool for atomic allocations
+[    0.353164] Serial: AMBA PL011 UART driver
+[    0.353310] OF: amba_device_add() failed (-2) for /watchdog@2a490000
+[    0.353489] OF: amba_device_add() failed (-2) for /watchdog@2b060000
+[    0.353580] 1c090000.uart: ttyAMA0 at MMIO 0x1c090000 (irq = 13, base_baud = 0) is a PL011 rev3
+[    0.353904] console [ttyAMA0] enabled
+[    0.354053] 1c0a0000.uart: ttyAMA1 at MMIO 0x1c0a0000 (irq = 14, base_baud = 0) is a PL011 rev3
+[    0.354202] 1c0b0000.uart: ttyAMA2 at MMIO 0x1c0b0000 (irq = 15, base_baud = 0) is a PL011 rev3
+[    0.354352] 1c0c0000.uart: ttyAMA3 at MMIO 0x1c0c0000 (irq = 16, base_baud = 0) is a PL011 rev3
+[    0.354463] OF: amba_device_add() failed (-2) for /kmi@1c060000
+[    0.354514] OF: amba_device_add() failed (-2) for /kmi@1c070000
+[    0.354567] OF: /watchdog@1c0f0000: could not find phandle
+[    0.354572] ERROR: could not get clock /watchdog@1c0f0000:apb_pclk(1)
+[    0.354578] OF: amba_device_add() failed (-2) for /watchdog@1c0f0000
+[    0.354630] OF: /rtc@1c170000: could not find phandle
+[    0.354635] ERROR: could not get clock /rtc@1c170000:apb_pclk(0)
+[    0.354641] OF: amba_device_add() failed (-2) for /rtc@1c170000
+[    0.357542] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.360375] vgaarb: loaded
+[    0.360467] SCSI subsystem initialized
+[    0.360509] libata version 3.00 loaded.
+[    0.360576] usbcore: registered new interface driver usbfs
+[    0.360594] usbcore: registered new interface driver hub
+[    0.360616] usbcore: registered new device driver usb
+[    0.360643] pps_core: LinuxPPS API ver. 1 registered
+[    0.360647] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.360658] PTP clock support registered
+[    0.363136] NET: Registered protocol family 2
+[    0.363290] tcp_listen_portaddr_hash hash table entries: 256 (order: 0, 4096 bytes)
+[    0.363298] TCP established hash table entries: 4096 (order: 3, 32768 bytes)
+[    0.363326] TCP bind hash table entries: 4096 (order: 4, 65536 bytes)
+[    0.363354] TCP: Hash tables configured (established 4096 bind 4096)
+[    0.363381] UDP hash table entries: 256 (order: 1, 8192 bytes)
+[    0.363391] UDP-Lite hash table entries: 256 (order: 1, 8192 bytes)
+[    0.363440] NET: Registered protocol family 1
+[    0.363537] RPC: Registered named UNIX socket transport module.
+[    0.363542] RPC: Registered udp transport module.
+[    0.363546] RPC: Registered tcp transport module.
+[    0.363551] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.363556] PCI: CLS 0 bytes, default 64
+[    0.363803] kvm [1]: SVE system without VHE unsupported.  Broken cpu?
+[    0.364180] workingset: timestamp_bits=62 max_order=17 bucket_order=0
+[    0.366597] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.366790] fuse init (API version 7.27)
+[    0.367049] io scheduler noop registered
+[    0.367124] io scheduler cfq registered (default)
+[    0.367128] io scheduler mq-deadline registered
+[    0.367133] io scheduler kyber registered
+[    0.367178] atomic64_test: passed
+[    0.367431] pci-host-generic 30000000.pci: host bridge /pci ranges:
+[    0.367438] pci-host-generic 30000000.pci:   No bus range found for /pci, using [bus 00-ff]
+[    0.367445] pci-host-generic 30000000.pci: Parsing ranges property...
+[    0.367454] pci-host-generic 30000000.pci:    IO 0x2f000000..0x2f00ffff -> 0x00000000
+[    0.367463] pci-host-generic 30000000.pci:   MEM 0x40000000..0x7fffffff -> 0x00000000
+[    0.367482] pci-host-generic 30000000.pci: ECAM at [mem 0x30000000-0x3fffffff] for [bus 00-ff]
+[    0.367525] pci-host-generic 30000000.pci: PCI host bridge to bus 0000:00
+[    0.367531] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.367537] pci_bus 0000:00: root bus resource [io  0x0000-0xffff]
+[    0.367545] pci_bus 0000:00: root bus resource [mem 0x40000000-0x7fffffff] (bus address [0x00000000-0x3fffffff])
+[    0.367552] pci_bus 0000:00: scanning bus
+[    0.367569] pci 0000:00:01.0: [8086:7111] type 00 class 0x010185
+[    0.367579] pci 0000:00:01.0: reg 0x10: [io  0x0000-0x0007]
+[    0.367586] pci 0000:00:01.0: reg 0x14: [io  0x0000-0x0003]
+[    0.367593] pci 0000:00:01.0: reg 0x18: [io  0x0000-0x0007]
+[    0.367600] pci 0000:00:01.0: reg 0x1c: [io  0x0000-0x0003]
+[    0.367608] pci 0000:00:01.0: reg 0x20: [io  0x0000-0x000f]
+[    0.367616] pci 0000:00:01.0: reg 0x30: [mem 0x40000000-0x400007ff pref]
+[    0.367923] pci_bus 0000:00: fixups for bus
+[    0.367929] pci_bus 0000:00: bus scan returning with max=00
+[    0.367937] pci 0000:00:01.0: BAR 6: assigned [mem 0x40000000-0x400007ff pref]
+[    0.367944] pci 0000:00:01.0: BAR 4: assigned [io  0x1000-0x100f]
+[    0.367951] pci 0000:00:01.0: BAR 0: assigned [io  0x1010-0x1017]
+[    0.367958] pci 0000:00:01.0: BAR 2: assigned [io  0x1018-0x101f]
+[    0.367966] pci 0000:00:01.0: BAR 1: assigned [io  0x1020-0x1023]
+[    0.367973] pci 0000:00:01.0: BAR 3: assigned [io  0x1024-0x1027]
+[    0.369084] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    0.369907] ata_piix 0000:00:01.0: assign IRQ: got 23
+[    0.369913] ata_piix 0000:00:01.0: version 2.13
+[    0.369920] ata_piix 0000:00:01.0: enabling device (0000 -> 0001)
+[    0.369942] ata_piix 0000:00:01.0: enabling bus mastering
+[    0.370443] scsi host0: ata_piix
+[    0.372290] scsi host1: ata_piix
+[    0.372344] ata1: PATA max UDMA/33 cmd 0x1010 ctl 0x1020 bmdma 0x1000 irq 23
+[    0.372350] ata2: PATA max UDMA/33 cmd 0x1018 ctl 0x1024 bmdma 0x1008 irq 23
+[    0.372538] libphy: Fixed MDIO Bus: probed
+[    0.372554] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    0.372559] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    0.372579] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[    0.372584] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    0.372605] igb: Intel(R) Gigabit Ethernet Network Driver - version 5.4.0-k
+[    0.372610] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    0.372630] ixgbe: Intel(R) 10 Gigabit PCI Express Network Driver - version 5.1.0-k
+[    0.372636] ixgbe: Copyright (c) 1999-2016 Intel Corporation.
+[    0.372676] ixgbevf: Intel(R) 10 Gigabit PCI Express Virtual Function Network Driver - version 4.1.0-k
+[    0.372682] ixgbevf: Copyright (c) 2009 - 2015 Intel Corporation.
+[    0.376321] i40e: Intel(R) Ethernet Connection XL710 Network Driver - version 2.3.2-k
+[    0.376326] i40e: Copyright (c) 2013 - 2014 Intel Corporation.
+[    0.380312] ixgb: Intel(R) PRO/10GbE Network Driver - version 1.0.135-k2-NAPI
+[    0.380317] ixgb: Copyright (c) 1999-2008 Intel Corporation.
+[    0.380337] i40evf: Intel(R) 40-10 Gigabit Virtual Function Network Driver - version 3.2.2-k
+[    0.380343] Copyright (c) 2013 - 2015 Intel Corporation.
+[    0.380504] usbcore: registered new interface driver usb-storage
+[    0.380580] mousedev: PS/2 mouse device common for all mice
+[    0.380658] gem5 DVFS handler is disabled
+[    0.380662] gem5-energy-ctrl loaded at (____ptrval____)
+[    0.380668] gem5_energy_ctrl_mc: gem5_mc_init: DVFS handler in energy controller is disabled,                         ARM gem5 multi-cluster cpufreq driver                         will not be registered
+[    0.380950] usbcore: registered new interface driver usbhid
+[    0.380954] usbhid: USB HID core driver
+[    0.381004] NET: Registered protocol family 17
+[    0.532384] ata1.00: ATA-7: M5 IDE Disk, , max UDMA/66
+[    0.532389] ata1.00: 3906250 sectors, multi 0: LBA 
+[    0.532473] scsi 0:0:0:0: Direct-Access     ATA      M5 IDE Disk      n/a  PQ: 0 ANSI: 5
+[    0.532663] sd 0:0:0:0: [sda] 3906250 512-byte logical blocks: (2.00 GB/1.86 GiB)
+[    0.532666] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[    0.532678] sd 0:0:0:0: [sda] Write Protect is off
+[    0.532684] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    0.532709] sd 0:0:0:0: [sda] Write cache: disabled, read cache: enabled, doesn't support DPO or FUA
+[    0.532969]  sda: sda1
+[    0.533201] sd 0:0:0:0: [sda] Attached SCSI disk
+[    0.537153] EXT4-fs (sda1): mounted filesystem with ordered data mode. Opts: (null)
+[    0.537162] VFS: Mounted root (ext4 filesystem) on device 8:1.
+[    0.537229] devtmpfs: mounted
+[    0.537291] Freeing unused kernel memory: 448K
++ mount -t proc - /proc
++ mount -t sysfs - /sys
++ mount -t debugfs - /sys/kernel/debug/
++ [ -e /dev/sdb1 ]
++ [ -e /dev/sdb ]
++ [ -e /dev/vdb1 ]
++ [ -e /dev/vdb ]
++ [ -e /dev/vda1 ]
++ [ -e /dev/vda ]
++ f=/tmp/script
++ /sbin/m5 readfile
++ [ -s /tmp/script ]
++ exec /sbin/getty -a root -L ttyAMA0 vt102
+
+Ubuntu 18.04.2 LTS aarch64-gem5 ttyAMA0
+
+aarch64-gem5 login: root (automatic login)
+
+[    0.570960] random: fast init done
+Welcome to Ubuntu 18.04.2 LTS (GNU/Linux 4.18.0+ aarch64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+This system has been minimized by removing packages and content that are
+not required on a system that users do not log into.
+
+To restore this content, you can run the 'unminimize' command.
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+
+
+root@aarch64-gem5:~# 
+root@aarch64-gem5:~# 
+root@aarch64-gem5:~# chmod 777 pthread_matrixmul
+root@aarch64-gem5:~# ./  .//pthread_matrixmul ^C
+root@aarch64-gem5:~# / ls
+pthread_matrixmul
+root@aarch64-gem5:~# ./pthread_matrixmul 
+Usage: ./pthread_matrixmul n
+  where n is no. of thread
+root@aarch64-gem5:~# ./pthread_matrixmul 2
+^C
+root@aarch64-gem5:~# df  xi  xi  exit
+logout
+[    1.479038] Kernel panic - not syncing: Attempted to kill init! exitcode=0x00000000
+[    1.479038] 
+[    1.479045] CPU: 6 PID: 1 Comm: login Not tainted 4.18.0+ #1
+[    1.479050] Hardware name: V2P-CA15 (DT)
+[    1.479053] Call trace:
+[    1.479058]  dump_backtrace+0x0/0x1c0
+[    1.479063]  show_stack+0x14/0x20
+[    1.479069]  dump_stack+0x8c/0xac
+[    1.479073]  panic+0x130/0x288
+[    1.479078]  complete_and_exit+0x0/0x20
+[    1.479083]  do_group_exit+0x38/0xa0
+[    1.479088]  __wake_up_parent+0x0/0x28
+[    1.479092]  el0_svc_naked+0x30/0x34
+[    1.479099] SMP: stopping secondary CPUs
+[    1.479104] Kernel Offset: disabled
+[    1.479108] CPU features: 0x21c06292
+[    1.479112] Memory Limit: 512 MB
+[    1.479120] ---[ end Kernel panic - not syncing: Attempted to kill init! exitcode=0x00000000
+[    1.479120]  ]---

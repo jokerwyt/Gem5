@@ -1,0 +1,23 @@
+[0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd070]
+[0.000000] Linux version 4.18.0+ (arm-employee@arm-computer) (gcc version 7.4.0 (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1)) #1 SMP PREEMPT Wed Nov 6 14:10:00 GMT 2019
+[0.000000] Machine model: V2P-CA15
+[0.000000] Memory limited to 512MB
+[0.000000] cma: Reserved 16 MiB at 0x000000009f000000
+[0.000000] On node 0 totalpages: 131072
+[0.000000]   DMA32 zone: 2048 pages used for memmap
+[0.000000]   DMA32 zone: 0 pages reserved
+[0.000000]   DMA32 zone: 131072 pages, LIFO batch:31
+[0.000000] random: get_random_bytes called from start_kernel+0xa8/0x3e8 with crng_init=0
+[0.000000] percpu: Embedded 23 pages/cpu @(____ptrval____) s53976 r8192 d32040 u94208
+[0.000000] pcpu-alloc: s53976 r8192 d32040 u94208 alloc=23*4096
+[0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 [0] 6 [0] 7 
+[0.000000] Detected PIPT I-cache on CPU0
+[0.000000] CPU features: enabling workaround for ARM erratum 832075
+[0.000000] CPU features: enabling workaround for ARM erratum 834220
+[0.000000] CPU features: enabling workaround for EL2 vector hardening
+[0.000000] CPU features: detected: Kernel page table isolation (KPTI)
+[0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 129024
+[0.000000] Kernel command line: earlyprintk=pl011,0x1c090000 console=ttyAMA0 lpj=19988480 norandmaps rw loglevel=8 mem=512MB root=/dev/sda1
+[0.000000] log_buf_len individual max cpu contribution: 4096 bytes
+[0.000000] log_buf_len total cpu_extra contributions: 28672 bytes
+[0.000000] log_buf_len min size: 16384 bytes
