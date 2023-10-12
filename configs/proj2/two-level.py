@@ -16,6 +16,7 @@ parser.add_option('--lpddr3_1600_1x32', action="store_true")
 parser.add_option('--local', action="store_true")
 parser.add_option("--tournament", action="store_true")
 parser.add_option('--bimode', action="store_true")
+parser.add_option('--alwaystake', action="store_true")
 parser.add_option('--btbentry', type="int", default=4096)
 parser.add_option('--ras', type="int", default=16)
 parser.add_option('--localsize', type="int", default=2048)
@@ -88,6 +89,8 @@ elif options.tournament:
     root.system.cpu.branchPred = TournamentBP()
 elif options.bimode:
     root.system.cpu.branchPred = BiModeBP()
+elif options.alwaystake:
+    root.system.cpu.branchPred = MySimpleBP()
 else:
     root.system.cpu.branchPred = TournamentBP()
 

@@ -958,3 +958,10 @@ class MultiperspectivePerceptronTAGE8KB(MultiperspectivePerceptronTAGE):
     tage = MPP_TAGE_8KB()
     loop_predictor = MPP_LoopPredictor_8KB()
     statistical_corrector = MPP_StatisticalCorrector_8KB()
+
+
+
+class MySimpleBP(BranchPredictor):
+    type = 'MySimpleBP'
+    cxx_class = 'gem5::branch_prediction::MySimpleBP'
+    cxx_header = "cpu/pred/mysimplebp.hh"
