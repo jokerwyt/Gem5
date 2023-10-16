@@ -965,3 +965,14 @@ class MySimpleBP(BranchPredictor):
     type = 'MySimpleBP'
     cxx_class = 'gem5::branch_prediction::MySimpleBP'
     cxx_header = "cpu/pred/mysimplebp.hh"
+
+
+class PerceptronBP(BranchPredictor):
+    type = 'PerceptronBP'
+    cxx_class = 'gem5::branch_prediction::PerceptronBP'
+    cxx_header = "cpu/pred/perceptron.hh"
+
+    perceptronNumber = Param.Unsigned(1024, "number of perceptrons")
+    perceptronHistoryBits = Param.Unsigned(10, "length of historys")
+    stopTrainingThreshold = Param.Unsigned(63, "stopTraining threshold")
+    

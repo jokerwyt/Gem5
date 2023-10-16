@@ -11,7 +11,7 @@ namespace branch_prediction {
 class MySimpleBP : public BPredUnit {
  public:
   MySimpleBP(const MySimpleBPParams &params);
-  void unconditionalBranch(ThreadID tid, Addr pc, void * &bp_history);
+  void uncondBranch(ThreadID tid, Addr pc, void * &bp_history);
   bool lookup(ThreadID tid, Addr branch_addr, void * &bp_history);
   void btbUpdate(ThreadID tid, Addr branch_addr, void * &bp_history);
   void update(ThreadID tid, Addr branch_addr, bool taken, void *bp_history,

@@ -23,6 +23,13 @@ parser.add_option('--localsize', type="int", default=2048)
 parser.add_option('--localhissize', type="int", default=2048)
 parser.add_option('--globalsize', type="int", default=8192)
 parser.add_option('--choicesize', type="int", default=8192)
+
+
+parser.add_option('--perceptron', action="store_true")
+parser.add_option('--globallen', type="int", default=30)
+parser.add_option('--threshold', type="int", default=63)
+parser.add_option('--perceptronnum', type="int", default=1024)
+
 (options, args) = parser.parse_args()
 
 
@@ -91,6 +98,8 @@ elif options.bimode:
     root.system.cpu.branchPred = BiModeBP()
 elif options.alwaystake:
     root.system.cpu.branchPred = MySimpleBP()
+elif options.perceptron:
+    root.system.cpu.branchPred = PerceptronBP()
 else:
     root.system.cpu.branchPred = TournamentBP()
 
@@ -107,6 +116,10 @@ elif options.tournament:
 elif options.bimode:
     root.system.cpu.branchPred.globalPredictorSize = options.globalsize
     root.system.cpu.branchPred.choicePredictorSize = options.choicesize
+elif options.perceptron:
+    root.system.cpu.branchPred.perceptronNumber = options.perceptronnum
+    root.system.cpu.branchPred.perceptronHistoryBits = options.globallen
+    root.system.cpu.branchPred.stopTrainingThreshold = options.threshold
 ########################### add branch predictor ###########################
 
 root.system.membus = SystemXBar()
@@ -137,7 +150,7 @@ process.cmd = options.workload.split(' ')
 root.system.cpu.workload = process
 root.system.cpu.createThreads()
 
-root.system.cpu.max_insts_any_thread = 1e9
+root.system.cpu.max_insts_any_thread = 1e5
 
 m5.instantiate()
 exit_event = m5.simulate()
