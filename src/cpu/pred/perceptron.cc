@@ -22,7 +22,10 @@ PerceptronBP::PerceptronBP(const PerceptronBPParams& params)
   }
 }
 
-void PerceptronBP::uncondBranch(ThreadID tid, Addr pc, void*& bp_history) {}
+void PerceptronBP::uncondBranch(ThreadID tid, Addr pc, void*& bp_history) {
+  assert(bp_history == nullptr);
+  bp_history = nullptr;
+}
 
 unsigned int PerceptronBP::hash(Addr branch_addr) {
   return branch_addr % perceptronNumber;
@@ -55,13 +58,16 @@ void PerceptronBP::update(ThreadID tid, Addr branch_addr,
                                                 bool squashed,
                                                 const StaticInstPtr& inst,
                                                 Addr corrTarget) {
-  assert(bp_history != nullptr);
+  if (bp_history == nullptr) {
+    // uncond branch
+    return;
+  }
+
   BranchInfo *bi = static_cast<BranchInfo*>(bp_history);
 
   if (squashed) {
     // do nothing for a squashed instruction.
-    delete bi;
-    bp_history = nullptr;
+    // bi_mode does not delete the bp_history here, so we don't either.
     return;
   }
 
@@ -79,10 +85,13 @@ void PerceptronBP::update(ThreadID tid, Addr branch_addr,
   }
 
   delete bi;
-  bp_history = nullptr;
 }
 
 void PerceptronBP::squash(ThreadID tid, void* bp_history) {
+  if (bp_history) {
+    BranchInfo *bi = static_cast<BranchInfo*>(bp_history);
+    delete bi;
+  }
 }
 
 }  // namespace branch_prediction

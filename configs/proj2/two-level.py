@@ -150,7 +150,7 @@ process.cmd = options.workload.split(' ')
 root.system.cpu.workload = process
 root.system.cpu.createThreads()
 
-root.system.cpu.max_insts_any_thread = 1e5
+root.system.cpu.max_insts_any_thread = 1e9
 
 m5.instantiate()
 exit_event = m5.simulate()
