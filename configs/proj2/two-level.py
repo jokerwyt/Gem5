@@ -17,6 +17,10 @@ parser.add_option('--local', action="store_true")
 parser.add_option("--tournament", action="store_true")
 parser.add_option('--bimode', action="store_true")
 parser.add_option('--alwaystake', action="store_true")
+parser.add_option('--stdperceptron8k', action="store_true")
+parser.add_option('--stdperceptron64k', action="store_true")
+
+
 parser.add_option('--btbentry', type="int", default=4096)
 parser.add_option('--ras', type="int", default=16)
 parser.add_option('--localsize', type="int", default=2048)
@@ -100,6 +104,10 @@ elif options.alwaystake:
     root.system.cpu.branchPred = MySimpleBP()
 elif options.perceptron:
     root.system.cpu.branchPred = PerceptronBP()
+elif options.stdperceptron8k:
+    root.system.cpu.branchPred = MultiperspectivePerceptron8KB()
+elif options.stdperceptron64k:
+    root.system.cpu.branchPred = MultiperspectivePerceptron64KB()
 else:
     root.system.cpu.branchPred = TournamentBP()
 
