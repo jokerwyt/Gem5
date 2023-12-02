@@ -172,7 +172,7 @@
                 }
             ],
             "max_insts_all_threads": 0,
-            "max_insts_any_thread": 10000000,
+            "max_insts_any_thread": 1000000000,
             "mmu": {
                 "type": "ArmMMU",
                 "cxx_class": "gem5::ArmISA::MMU",
@@ -390,7 +390,9 @@
                     "name": "workload",
                     "path": "system.cpu.workload",
                     "cmd": [
-                        "tests/test-progs/hello/bin/arm/linux/hello"
+                        "test_bench/BFS/bfs",
+                        "-f",
+                        "test_bench/BFS/USA-road-d.NY.gr"
                     ],
                     "cwd": "/storage/pub25/gem5",
                     "drivers": [],
@@ -453,8 +455,8 @@
                 "prefetcher": null,
                 "replace_expansions": true,
                 "replacement_policy": {
-                    "type": "MyMRURP",
-                    "cxx_class": "gem5::replacement_policy::MyMRU",
+                    "type": "RandomRP",
+                    "cxx_class": "gem5::replacement_policy::Random",
                     "name": "replacement_policy",
                     "path": "system.cpu.dcache.replacement_policy",
                     "eventq_index": 0
@@ -559,8 +561,8 @@
                 "prefetcher": null,
                 "replace_expansions": true,
                 "replacement_policy": {
-                    "type": "MyMRURP",
-                    "cxx_class": "gem5::replacement_policy::MyMRU",
+                    "type": "RandomRP",
+                    "cxx_class": "gem5::replacement_policy::Random",
                     "name": "replacement_policy",
                     "path": "system.cpu.icache.replacement_policy",
                     "eventq_index": 0
@@ -746,8 +748,8 @@
             "prefetcher": null,
             "replace_expansions": true,
             "replacement_policy": {
-                "type": "MyMRURP",
-                "cxx_class": "gem5::replacement_policy::MyMRU",
+                "type": "RandomRP",
+                "cxx_class": "gem5::replacement_policy::Random",
                 "name": "replacement_policy",
                 "path": "system.l2cache.replacement_policy",
                 "eventq_index": 0
