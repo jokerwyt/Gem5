@@ -687,3 +687,35 @@ class PIFPrefetcher(QueuedPrefetcher):
         self.addEvent(
             HWPProbeEventRetiredInsts(self, simObj, "RetiredInstsPC")
         )
+
+
+
+
+class PPF(SignaturePathPrefetcherV2):
+    type = "PPF"
+    cxx_class = "gem5::prefetch::PPF"
+    cxx_header = "mem/cache/prefetch/ppf.hh"
+
+    permitted_threshold =  Param.Int(
+        4, "The threshold of the sum-up weights to accept a prefetching suggestion"
+    )
+
+    train_step = Param.Int(
+        1, "The step of training the weights"
+    )
+
+    overtrainning_threshold_positive = Param.Int(
+        100, "The threshold of the sum-up weights to accept a prefetching suggestion"
+    )
+
+    overtrainning_threshold_negative = Param.Int(
+        -100, "The threshold of the sum-up weights to accept a prefetching suggestion"
+    )
+
+    def __init__(self, **kwargs):
+        super(PPF, self).__init__()
+        # get four parameters from kwargs if they exist
+        self.permitted_threshold = kwargs.get('permitted_threshold', 4)
+        self.train_step = kwargs.get('train_step', 1)
+        self.overtrainning_threshold_positive = kwargs.get('overtrainning_threshold_positive', 100)
+        self.overtrainning_threshold_negative = kwargs.get('overtrainning_threshold_negative', -100)

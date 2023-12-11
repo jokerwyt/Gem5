@@ -390,7 +390,7 @@
                     "name": "workload",
                     "path": "system.cpu.workload",
                     "cmd": [
-                        "tests/test-progs/hello/bin/arm/linux/hello"
+                        "test_bench/2MM/2mm_base"
                     ],
                     "cwd": "/storage/pub25/gem5",
                     "drivers": [],
@@ -453,8 +453,8 @@
                 "prefetcher": null,
                 "replace_expansions": true,
                 "replacement_policy": {
-                    "type": "MyMRURP",
-                    "cxx_class": "gem5::replacement_policy::MyMRU",
+                    "type": "LRURP",
+                    "cxx_class": "gem5::replacement_policy::LRU",
                     "name": "replacement_policy",
                     "path": "system.cpu.dcache.replacement_policy",
                     "eventq_index": 0
@@ -559,8 +559,8 @@
                 "prefetcher": null,
                 "replace_expansions": true,
                 "replacement_policy": {
-                    "type": "MyMRURP",
-                    "cxx_class": "gem5::replacement_policy::MyMRU",
+                    "type": "LRURP",
+                    "cxx_class": "gem5::replacement_policy::LRU",
                     "name": "replacement_policy",
                     "path": "system.cpu.icache.replacement_policy",
                     "eventq_index": 0
@@ -743,11 +743,114 @@
             },
             "prefetch_on_access": false,
             "prefetch_on_pf_hit": false,
-            "prefetcher": null,
+            "prefetcher": {
+                "type": "PPF",
+                "cxx_class": "gem5::prefetch::PPF",
+                "name": "prefetcher",
+                "path": "system.l2cache.prefetcher",
+                "block_size": 64,
+                "cache_snoop": false,
+                "clk_domain": "system.clk_domain",
+                "eventq_index": 0,
+                "global_history_register_entries": 8,
+                "global_history_register_indexing_policy": {
+                    "type": "SetAssociative",
+                    "cxx_class": "gem5::SetAssociative",
+                    "name": "global_history_register_indexing_policy",
+                    "path": "system.l2cache.prefetcher.global_history_register_indexing_policy",
+                    "assoc": 8,
+                    "entry_size": 1,
+                    "eventq_index": 0,
+                    "size": 8
+                },
+                "global_history_register_replacement_policy": {
+                    "type": "LRURP",
+                    "cxx_class": "gem5::replacement_policy::LRU",
+                    "name": "global_history_register_replacement_policy",
+                    "path": "system.l2cache.prefetcher.global_history_register_replacement_policy",
+                    "eventq_index": 0
+                },
+                "latency": 1,
+                "lookahead_confidence_threshold": 0.25,
+                "max_prefetch_requests_with_pending_translation": 32,
+                "num_counter_bits": 4,
+                "on_data": true,
+                "on_inst": true,
+                "on_miss": false,
+                "on_read": true,
+                "on_write": true,
+                "page_bytes": 4096,
+                "pattern_table_assoc": 1,
+                "pattern_table_entries": 512,
+                "pattern_table_indexing_policy": {
+                    "type": "SetAssociative",
+                    "cxx_class": "gem5::SetAssociative",
+                    "name": "pattern_table_indexing_policy",
+                    "path": "system.l2cache.prefetcher.pattern_table_indexing_policy",
+                    "assoc": 1,
+                    "entry_size": 1,
+                    "eventq_index": 0,
+                    "size": 512
+                },
+                "pattern_table_replacement_policy": {
+                    "type": "LRURP",
+                    "cxx_class": "gem5::replacement_policy::LRU",
+                    "name": "pattern_table_replacement_policy",
+                    "path": "system.l2cache.prefetcher.pattern_table_replacement_policy",
+                    "eventq_index": 0
+                },
+                "permitted_threshold": 4.0,
+                "power_model": [],
+                "power_state": {
+                    "type": "PowerState",
+                    "cxx_class": "gem5::PowerState",
+                    "name": "power_state",
+                    "path": "system.l2cache.prefetcher.power_state",
+                    "clk_gate_bins": 20,
+                    "clk_gate_max": 1000000000000,
+                    "clk_gate_min": 1000,
+                    "default_state": "UNDEFINED",
+                    "eventq_index": 0,
+                    "leaders": [],
+                    "possible_states": []
+                },
+                "prefetch_confidence_threshold": 0.25,
+                "prefetch_on_access": false,
+                "prefetch_on_pf_hit": false,
+                "queue_filter": true,
+                "queue_size": 32,
+                "queue_squash": true,
+                "signature_bits": 12,
+                "signature_shift": 3,
+                "signature_table_assoc": 1,
+                "signature_table_entries": 256,
+                "signature_table_indexing_policy": {
+                    "type": "SetAssociative",
+                    "cxx_class": "gem5::SetAssociative",
+                    "name": "signature_table_indexing_policy",
+                    "path": "system.l2cache.prefetcher.signature_table_indexing_policy",
+                    "assoc": 1,
+                    "entry_size": 1,
+                    "eventq_index": 0,
+                    "size": 256
+                },
+                "signature_table_replacement_policy": {
+                    "type": "LRURP",
+                    "cxx_class": "gem5::replacement_policy::LRU",
+                    "name": "signature_table_replacement_policy",
+                    "path": "system.l2cache.prefetcher.signature_table_replacement_policy",
+                    "eventq_index": 0
+                },
+                "strides_per_pattern_entry": 4,
+                "sys": "system",
+                "tag_prefetch": true,
+                "throttle_control_percentage": 0,
+                "use_virtual_addresses": false
+            },
             "replace_expansions": true,
             "replacement_policy": {
-                "type": "MyMRURP",
-                "cxx_class": "gem5::replacement_policy::MyMRU",
+                "type": "LRURP",
+                "cxx_class": "gem5::replacement_policy::LRU",
                 "name": "replacement_policy",
                 "path": "system.l2cache.replacement_policy",
                 "eventq_index": 0

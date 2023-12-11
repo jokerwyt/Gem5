@@ -55,6 +55,8 @@ namespace prefetch
 
 class SignaturePathV2 : public SignaturePath
 {
+
+protected:
     /** Global History Register entry datatype */
     struct GlobalHistoryEntry : public TaggedEntry
     {

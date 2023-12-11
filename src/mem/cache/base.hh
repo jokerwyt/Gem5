@@ -360,6 +360,9 @@ class BaseCache : public ClockedObject
     /** To probe when a cache fill occurs */
     ProbePointArg<PacketPtr> *ppFill;
 
+    /** To probe when a cache line is evicted*/
+    ProbePointArg<PacketPtr> *ppEviction;
+
     /**
      * To probe when the contents of a block are updated. Content updates
      * include data fills, overwrites, and invalidations, which means that

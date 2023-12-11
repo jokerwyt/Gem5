@@ -176,7 +176,7 @@ class SignaturePath : public Queued
      * @param is_secure whether this page is inside the secure memory area
      * @param addresses addresses to prefetch will be added to this vector
      */
-    void addPrefetch(Addr ppn, stride_t last_block, stride_t delta,
+    virtual void addPrefetch(Addr ppn, stride_t last_block, stride_t delta,
                           double path_confidence, signature_t signature,
                           bool is_secure,
                           std::vector<AddrPriority> &addresses);

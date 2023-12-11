@@ -1686,6 +1686,8 @@ BaseCache::evictBlock(CacheBlk *blk, PacketList &writebacks)
     PacketPtr pkt = evictBlock(blk);
     if (pkt) {
         writebacks.push_back(pkt);
+        ppEviction->notify(pkt);
+        DPRINTF(Cache, "Eviction Notify\n");
     }
 }
 
@@ -2510,6 +2512,7 @@ BaseCache::regProbePoints()
     ppHit = new ProbePointArg<PacketPtr>(this->getProbeManager(), "Hit");
     ppMiss = new ProbePointArg<PacketPtr>(this->getProbeManager(), "Miss");
     ppFill = new ProbePointArg<PacketPtr>(this->getProbeManager(), "Fill");
+    ppEviction = new ProbePointArg<PacketPtr>(this->getProbeManager(), "Eviction");
     ppDataUpdate =
         new ProbePointArg<DataUpdate>(this->getProbeManager(), "Data Update");
 }

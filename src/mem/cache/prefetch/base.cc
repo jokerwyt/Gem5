@@ -87,8 +87,10 @@ Base::PrefetchListener::notify(const PacketPtr &pkt)
 {
     if (isFill) {
         parent.notifyFill(pkt);
-    } else {
+    } else if (!eviction) {
         parent.probeNotify(pkt, miss);
+    } else {
+        parent.notifyEviction(pkt);
     }
 }
 
@@ -287,6 +289,9 @@ Base::regProbeListeners()
                                                  false));
         listeners.push_back(new PrefetchListener(*this, pm, "Hit", false,
                                                  false));
+        listeners.push_back(new PrefetchListener(*this, pm, "Eviction", false,
+                                                 false, true));
+        
     }
 }
 
