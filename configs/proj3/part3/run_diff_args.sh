@@ -9,7 +9,7 @@ trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
 prefetcher=("PPF")
 
-ppf_threshold=(8 16 24 32 40)
+ppf_threshold=(0 1 2 4 8 16)
 # train_step=(1 2)
 
 for threshold in ${ppf_threshold[@]}; do

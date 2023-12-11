@@ -44,7 +44,7 @@ namespace prefetch
 
 
 int PPF::into_signed(SatCounter8 s) {
-    return ((int)s) - (1 << (this->weight_bits - 1));
+    return ((int)((uint8_t)s)) - (1 << (this->weight_bits - 1));
 }
 
 SatCounter8 PPF::into_unsigned(int s) {

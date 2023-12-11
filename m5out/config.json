@@ -172,7 +172,7 @@
                 }
             ],
             "max_insts_all_threads": 0,
-            "max_insts_any_thread": 10000000,
+            "max_insts_any_thread": 1000000000,
             "mmu": {
                 "type": "ArmMMU",
                 "cxx_class": "gem5::ArmISA::MMU",
@@ -390,7 +390,7 @@
                     "name": "workload",
                     "path": "system.cpu.workload",
                     "cmd": [
-                        "test_bench/2MM/2mm_base"
+                        "tests/test-progs/hello/bin/arm/linux/hello"
                     ],
                     "cwd": "/storage/pub25/gem5",
                     "drivers": [],
@@ -779,6 +779,8 @@
                 "on_miss": false,
                 "on_read": true,
                 "on_write": true,
+                "overtrainning_threshold_negative": -10,
+                "overtrainning_threshold_positive": 50,
                 "page_bytes": 4096,
                 "pattern_table_assoc": 1,
                 "pattern_table_entries": 512,
@@ -799,7 +801,7 @@
                     "path": "system.l2cache.prefetcher.pattern_table_replacement_policy",
                     "eventq_index": 0
                 },
-                "permitted_threshold": 4.0,
+                "permitted_threshold": 20,
                 "power_model": [],
                 "power_state": {
                     "type": "PowerState",
@@ -845,6 +847,7 @@
                 "sys": "system",
                 "tag_prefetch": true,
                 "throttle_control_percentage": 0,
+                "train_step": 1,
                 "use_virtual_addresses": false
             },
             "replace_expansions": true,

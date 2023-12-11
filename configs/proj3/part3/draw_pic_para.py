@@ -178,10 +178,13 @@ index = np.arange(len(threshold))
 bar_width = 0.15
 opacity = 0.8
 
+# get the root path of the project for os.path.join
+root_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
 for i in range(len(workload)):
     ipc = []
     for j in range(len(threshold)):
-        ipc.append(get_ipc(os.path.join("para", "m5out-" + workload[i] + "-PPF-threshold-" + threshold[j])))
+        ipc.append(get_ipc(os.path.join(root_path, "configs/proj3/part3", "para", "m5out-" + workload[i] + "-PPF-threshold-" + threshold[j])))
     rects = ax.bar(index + i * bar_width, ipc, bar_width, alpha=opacity, label=workload[i])
 
 ax.set_xlabel("Threshold")
@@ -207,7 +210,7 @@ opacity = 0.8
 for i in range(len(workload)):
     hit_rate = []
     for j in range(len(threshold)):
-        hit_rate.append(get_hit_rate(os.path.join("para", "m5out-" + workload[i] + "-PPF-threshold-" + threshold[j])))
+        hit_rate.append(get_hit_rate(os.path.join(root_path, "configs/proj3/part3", "para", "m5out-" + workload[i] + "-PPF-threshold-" + threshold[j])))
     rects = ax.bar(index + i * bar_width, hit_rate, bar_width, alpha=opacity, label=workload[i])
 
 ax.set_xlabel("Threshold")
@@ -233,7 +236,7 @@ opacity = 0.8
 for i in range(len(workload)):
     accuracy = []
     for j in range(len(threshold)):
-        accuracy.append(get_accuracy(os.path.join("para", "m5out-" + workload[i] + "-PPF-threshold-" + threshold[j])))
+        accuracy.append(get_accuracy(os.path.join(root_path, "configs/proj3/part3", "para", "m5out-" + workload[i] + "-PPF-threshold-" + threshold[j])))
     rects = ax.bar(index + i * bar_width, accuracy, bar_width, alpha=opacity, label=workload[i])
 
 ax.set_xlabel("Threshold")
@@ -259,7 +262,7 @@ opacity = 0.8
 for i in range(len(workload)):
     coverage = []
     for j in range(len(threshold)):
-        coverage.append(get_coverage(os.path.join("para", "m5out-" + workload[i] + "-PPF-threshold-" + threshold[j])))
+        coverage.append(get_coverage(os.path.join(root_path, "configs/proj3/part3", "para", "m5out-" + workload[i] + "-PPF-threshold-" + threshold[j])))
     rects = ax.bar(index + i * bar_width, coverage, bar_width, alpha=opacity, label=workload[i])
 
 ax.set_xlabel("Threshold")
